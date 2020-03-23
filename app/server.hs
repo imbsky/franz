@@ -11,6 +11,7 @@ options = Settings
   <*> option auto (long "port" <> value defaultPort <> help "Port number")
   <*> strOption (long "live" <> value "." <> metavar "DIR" <> help "Live prefix")
   <*> optional (strOption (long "archive" <> metavar "DIR" <> help "Archive prefix"))
+  <*> strOption (long "mount" <> value "/tmp/franz" <> metavar "DIR" <> help "Mount prefix")
 
 main :: IO ()
 main = execParser (info options mempty) >>= startServer
